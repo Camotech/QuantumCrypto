@@ -35,4 +35,9 @@ public class Complex {
   public void mult(double a) {
     this.mod(this.getReal() * a, this.getImag() * a);
   }
+  
+  public void pow(double a) {
+    double r = Math.sqrt(this.getReal() * this.getReal() + this.getImag() * this.getImag());
+    
+  }
 }
