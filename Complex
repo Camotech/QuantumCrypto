@@ -7,9 +7,9 @@ public class Complex {
     imag = 0;
   }
   
-  public Complex(double a, double b) {
-    real = a;
-    imag = b;
+  public Complex(double r, double i) {
+    real = r;
+    imag = i;
   }
   
   public double getReal() {
@@ -20,7 +20,15 @@ public class Complex {
     return this.imag;
   }
   
-  public Complex add(Complex a) {
-    return
+  private void mod(double r, double i) {
+    this = new Complex(r, i);
+  }
+  
+  public void add(Complex a) {
+    this.mod(this.getReal() + a.getReal(), this.getImag() + a.getImag());
+  }
+  
+  public void mult(Complex a) {
+    this.mod(this.getReal() * this.getReal()
   }
 }
