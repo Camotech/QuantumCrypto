@@ -29,6 +29,10 @@ public class Complex {
   }
   
   public void mult(Complex a) {
-    this.mod(this.getReal() * this.getReal()
+    this.mod(this.getReal() * a.getReal() - this.getImag() * a.getImag(), this.getImag() * a.getReal() + this.getReal() * a.getImag());
+  }
+  
+  public void mult(double a) {
+    this.mod(this.getReal() * a, this.getImag() * a);
   }
 }
