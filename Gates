@@ -16,6 +16,11 @@ public class Gates {
         }
       }
     }
+    return ret;
+  }
+  
+  public Complex[][] mult(Complex[] a, Complex[] b) {
+    return
   }
 
 }
