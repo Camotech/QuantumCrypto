@@ -1,4 +1,21 @@
 public class Gates {
-
+  
+  /**
+  * Multiplies matrices as a * b
+  */
+  public Complex[][] mult(Complex[][] a, Complex[][] b) {
+    if (a[0].length != b.length) {
+      System.out.println("Incorrect Matrix Dimensions: ")
+      System.exit(0);
+    }
+    Complex[][] ret = new Complex[a.length][b[0].length];
+    for (int i = 0; i < ret.length; i++) {
+      for (int j = 0; j < ret[0].length; j++) {
+        for (int k = 0; k < a[0].length; k++) {
+          ret[i][j] += a[j][k] * b[k][j];
+        }
+      }
+    }
+  }
 
 }
