@@ -1,6 +1,11 @@
 public class Qubit {
-
+  private Complex up; // |0>
+  private Complex dn; // |1>
   
+  public Qubit() {
+    up = new Complex(1, 0);
+    dn = new Complex();
+  }
 
 
 }
