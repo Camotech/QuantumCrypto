@@ -24,6 +24,14 @@ public class Complex {
     this = new Complex(r, i);
   }
   
+  private Complex inv() {
+    return new Complex(this.getReal(), -1 * this.getImag());
+  }
+  
+  private double square() {
+    return this.getReal() * this.getReal() - this.getImag() * this.getImag();
+  }
+  
   public void add(Complex a) {
     this.mod(this.getReal() + a.getReal(), this.getImag() + a.getImag());
   }
@@ -36,8 +44,18 @@ public class Complex {
     this.mod(this.getReal() * a, this.getImag() * a);
   }
   
-  public void pow(double a) {
-    double r = Math.sqrt(this.getReal() * this.getReal() + this.getImag() * this.getImag());
-    
+  public void div(Complex a) {
+    Complex b = this.mult(a.inv).div(a.square);
   }
+  
+  public void div(double a) {
+    this.mod(this.getReal() / a, this.getImag() / a);
+  }
+  
+  public void pow(double a) {
+    double r = Math.pow(Math.sqrt(this.getReal() * this.getReal() + this.getImag() * this.getImag()), a);
+    double theta = a * Math.atan(this.getImag() / this.getReal());
+    this.mod(r * Math.cos(theta), r * Math.sin(theta));
+  }
+  
 }
