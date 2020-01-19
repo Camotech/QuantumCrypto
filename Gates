@@ -11,8 +11,9 @@ public class GateWork {
     Complex[][] ret = new Complex[a.length][b[0].length];
     for (int i = 0; i < ret.length; i++) {
       for (int j = 0; j < ret[0].length; j++) {
+        ret[i][j] = new Complex();
         for (int k = 0; k < a[0].length; k++) {
-          ret[i][j] += a[j][k] * b[k][j];
+          ret[i][j].add(a[j][k] * b[k][j]);
         }
       }
     }
