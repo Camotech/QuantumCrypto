@@ -1,10 +1,27 @@
 public class Qubit {
+  final private double tol = .001; // Tolerance of the definition of 1
   private Complex up; // |0>
   private Complex dn; // |1>
   
   public Qubit() {
     up = new Complex(1, 0);
     dn = new Complex();
+  }
+  
+  pubilc Qubit(Complex zero, Complex one) {
+    up = new Complex(zero.getReal(), zero.getImag());
+    dn = new Complex(one.getReal(), one.getImag());
+  }
+  
+  /**
+  * Normalizes the vector
+  */
+  public void norm() {
+  double tot = up.square() + dn.square();
+    if (tot < 1 - tol || tot > 1 + tol) {
+      up.div(tot);
+      dn.div(tot);
+    }
   }
 
 
