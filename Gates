@@ -1,4 +1,4 @@
-public class GateWork {
+public class GateWork { 
   
   /**
   * Multiplies matrices as a * b
@@ -43,7 +43,5 @@ public class GateWork {
     }
     return ret;
   }
-  
-  
 
 }
