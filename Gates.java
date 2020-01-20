@@ -29,7 +29,12 @@ public class GateWork {
       return mult(list[1], list[2]);
     }
     else {
-      return mult //<-------------------------------------------------------------------------
+      Operator[] ret = new Operator[list.length - 1];
+      for (int i = 1; i < ret.length; i++) {
+        ret[i] = list[i + 2];
+      }
+      ret[0] = mult(list[1], list[2]);
+      return mult(ret);
     }
   }
   
